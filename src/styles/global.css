@@ -4,13 +4,13 @@
 
 @layer base {
   html {
-    font-family: "Times New Roman", Times, serif;
+    font-family: Verdana, Geneva, sans-serif;
   }
 
   body {
     background-color: #ffffff;
     color: #000000;
-    font-family: "Times New Roman", Times, serif;
+    font-family: Verdana, Geneva, sans-serif;
   }
 
   h1,
@@ -26,13 +26,6 @@
 @layer components {
   .prose {
     @apply text-black;
-    font-family: "Times New Roman", Times, serif;
-  }
-
-  .prose h1,
-  .prose h2,
-  .prose h3 {
-    font-family: Verdana, Geneva, sans-serif;
   }
 
   .prose h1 {
@@ -63,48 +56,8 @@
     @apply text-blue-700 hover:underline;
   }
 
-  .nav-font {
-    font-family: Verdana, Geneva, sans-serif;
-  }
-
-  /* Home page uses Times New Roman */
-  .home-page {
-    font-family: "Times New Roman", Times, serif;
-  }
-
-  .home-page .prose {
-    font-family: "Times New Roman", Times, serif;
-  }
-
-  .home-page .prose p {
-    font-family: "Times New Roman", Times, serif;
-  }
-
-  /* Other pages use Verdana */
-  .other-pages {
-    font-family: Verdana, Geneva, sans-serif;
-  }
-
-  .other-pages .prose {
-    font-family: Verdana, Geneva, sans-serif;
-  }
-
-  .other-pages .prose p {
-    font-family: Verdana, Geneva, sans-serif;
-  }
-
-  .other-pages .prose ul {
-    font-family: Verdana, Geneva, sans-serif;
-  }
-
-  .other-pages .prose li {
-    font-family: Verdana, Geneva, sans-serif;
-  }
-
   /* Mobile content adjustments */
   .mobile-content {
-    font-family: Verdana, Geneva, sans-serif;
-  }
 
   .mobile-content p {
     @apply text-sm md:text-xs;
