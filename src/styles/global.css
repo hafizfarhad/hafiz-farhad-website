@@ -57,8 +57,6 @@
   }
 
   /* Mobile content adjustments */
-  .mobile-content {
-
   .mobile-content p {
     @apply text-sm md:text-xs;
   }
