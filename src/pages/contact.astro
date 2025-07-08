@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Contact" description="Get in touch with Hafiz Farhad for security research collaboration, consulting, or speaking opportunities.">
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 other-pages">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <div class="prose prose-sm max-w-none">
+      <h2 class="nav-font text-base md:text-sm">Contact</h2>
+
+      <p class="text-sm md:text-xs">
+        I'm always interested in discussing security research, potential collaborations, speaking opportunities, or
+        consulting engagements. Feel free to reach out through any of the channels below.
+      </p>
+
+      <h3 class="nav-font text-base md:text-sm">Email</h3>
+      <p class="text-sm md:text-xs">hafiz@example.com</p>
+
+      <h3 class="nav-font text-base md:text-sm">Social Media</h3>
+      <p class="text-sm md:text-xs">
+        Twitter: @hafizfarhad<br />
+        LinkedIn: /in/hafizfarhad<br />
+        GitHub: /hafizfarhad
+      </p>
+
+      <h3 class="nav-font text-base md:text-sm">Response Time</h3>
+      <p class="text-sm md:text-xs">
+        I typically respond to emails within 24-48 hours. For urgent security matters, please indicate the priority in
+        your subject line.
+      </p>
+
+      <h3 class="nav-font text-base md:text-sm">Areas of Interest</h3>
+      <ul class="text-sm md:text-xs">
+        <li>Security research collaboration</li>
+        <li>Vulnerability disclosure coordination</li>
+        <li>Speaking at conferences and events</li>
+        <li>Security consulting and assessments</li>
+        <li>Open-source project contributions</li>
+        <li>Academic research partnerships</li>
+        <li>Mentoring and education</li>
+      </ul>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Home" description="Hafiz Farhad is a security researcher specializing in cybersecurity, vulnerability research, and digital forensics.">
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 home-page">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <div class="mb-4">
+      <img
+        src="/placeholder.svg?height=150&width=250"
+        alt="Security Research Visualization"
+        width="250"
+        height="150"
+        class="rounded w-full max-w-[250px] h-auto"
+      />
+    </div>
+
+    <div class="space-y-3">
+      <div class="bg-[#FFCC99] p-2 text-xs md:text-xs text-sm">
+        <strong>New:</strong>
+        <a href="/blog/zero-day-discovery" class="text-blue-700 hover:underline">
+          Zero-Day Discovery
+        </a>
+        |
+        <a href="/blog/ai-security-trends" class="text-blue-700 hover:underline">
+          AI Security Trends
+        </a>
+      </div>
+
+      <div class="bg-[#FFDD99] p-2 text-xs md:text-xs text-sm">
+        <strong>Research Focus:</strong> Currently investigating
+        <a href="/projects/quantum-cryptography" class="text-blue-700 hover:underline">
+          quantum-resistant cryptography
+        </a>
+      </div>
+    </div>
+
+    <div class="prose prose-sm max-w-none">
+      <p class="text-sm md:text-xs">
+        Welcome to my research hub. I'm a security researcher focused on identifying vulnerabilities, analyzing threat
+        landscapes, and developing defensive strategies for emerging technologies.
+      </p>
+
+      <p class="text-sm md:text-xs">
+        My work spans across various domains including IoT security, cryptographic analysis, AI/ML security, and
+        digital forensics. I regularly publish findings, share tools, and contribute to the security community.
+      </p>
+    </div>
+  </div>
+</Layout>

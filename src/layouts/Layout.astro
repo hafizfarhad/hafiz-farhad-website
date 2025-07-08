@@ -1,0 +1,59 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Security researcher specializing in cybersecurity, vulnerability research, and digital forensics." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Hafiz Farhad</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="security research, cybersecurity, vulnerability research, digital forensics, security analysis, penetration testing" />
+    <meta name="author" content="Hafiz Farhad" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Hafiz Farhad`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:site_name" content="Hafiz Farhad" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | Hafiz Farhad`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/og-image.png" />
+    <meta property="twitter:creator" content="@hafizfarhad" />
+    
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="min-h-screen bg-white flex">
+      <slot name="navigation" />
+      <main class="flex-1 md:ml-[69px]">
+        <div class="max-w-[410px] md:w-[410px] w-full px-4 md:pl-4 py-6 md:py-6 pt-16 md:pt-6">
+          <slot />
+        </div>
+      </main>
+    </div>
+    
+    <style>
+      @import '../styles/global.css';
+    </style>
+  </body>
+</html>

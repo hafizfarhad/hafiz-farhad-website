@@ -1,0 +1,83 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Projects" },
+  { href: "/tags", label: "Tags" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<!-- Mobile menu button -->
+<button
+  id="mobile-menu-button"
+  class="fixed top-4 left-4 z-50 md:hidden bg-[#9999CC] p-2 rounded text-xs nav-font"
+>
+  <span id="menu-icon">☰</span>
+</button>
+
+<!-- Desktop sidebar -->
+<nav class="hidden md:block fixed left-0 top-0 h-full w-[69px] bg-[#9999CC] flex-col py-2">
+  <div class="flex flex-col">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class={`px-2 py-1 text-xs text-black nav-font block ${
+          currentPath === item.href ? "bg-[#AAAADD]" : "hover:bg-[#AAAADD]"
+        }`}
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<!-- Mobile sidebar overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 md:hidden hidden">
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black bg-opacity-50"></div>
+  <nav class="fixed left-0 top-0 h-full w-48 bg-[#9999CC] py-2 z-50">
+    <div class="flex flex-col pt-12">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`px-4 py-2 text-sm text-black nav-font block mobile-nav-link ${
+            currentPath === item.href ? "bg-[#AAAADD]" : "hover:bg-[#AAAADD]"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</div>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileBackdrop = document.getElementById('mobile-backdrop');
+  const menuIcon = document.getElementById('menu-icon');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  let isOpen = false;
+
+  function toggleMenu() {
+    isOpen = !isOpen;
+    if (isOpen) {
+      mobileMenu?.classList.remove('hidden');
+      menuIcon!.textContent = '×';
+    } else {
+      mobileMenu?.classList.add('hidden');
+      menuIcon!.textContent = '☰';
+    }
+  }
+
+  mobileMenuButton?.addEventListener('click', toggleMenu);
+  mobileBackdrop?.addEventListener('click', toggleMenu);
+  
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+</script>

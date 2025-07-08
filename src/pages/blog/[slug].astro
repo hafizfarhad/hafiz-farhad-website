@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import { getAllPosts, getPost } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = getAllPosts();
+  return posts.map(post => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = getPost(slug);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={post.title} description={post.excerpt}>
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 other-pages">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <article class="prose prose-sm max-w-none">
+      <header class="mb-4">
+        <h2 class="text-base md:text-sm font-bold nav-font text-red-800">{post.title}</h2>
+        <p class="text-sm md:text-xs text-gray-600 mb-3">{post.date}</p>
+      </header>
+
+      <div class="mobile-content" set:html={post.content} />
+    </article>
+
+    <div class="pt-3 border-t border-gray-400">
+      <a href="/blog" class="text-sm md:text-xs text-blue-700 hover:underline">
+        ← Back to Blog
+      </a>
+    </div>
+  </div>
+</Layout>

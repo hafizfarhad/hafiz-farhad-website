@@ -1,0 +1,17 @@
+---
+// Cloudflare Pages redirects
+export async function GET() {
+  return new Response(`# Redirect www to non-www
+https://www.hafizfarhad.com/* https://hafizfarhad.com/:splat 301!
+
+# Redirect old blog paths (if any)
+/posts/* /blog/:splat 301
+
+# Handle trailing slashes
+/blog/ /blog 301
+/projects/ /projects 301
+/tags/ /tags 301
+/about/ /about 301
+/contact/ /contact 301`)
+}
+---

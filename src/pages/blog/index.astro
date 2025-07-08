@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import { getAllPosts } from '../../lib/blog';
+
+const posts = getAllPosts();
+---
+
+<Layout title="Blog" description="Latest security research articles, vulnerability analyses, and cybersecurity insights by Hafiz Farhad.">
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 other-pages">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <h2 class="text-sm md:text-sm text-base font-bold text-black nav-font mb-4">BLOG</h2>
+
+    <div class="text-sm md:text-xs mb-4">
+      If you're not sure which to read, try
+      <a href="/blog/zero-day-discovery" class="text-blue-700 hover:underline">
+        Zero-Day Discovery
+      </a>,
+      <a href="/blog/ai-security-trends" class="text-blue-700 hover:underline">
+        AI Security Trends
+      </a>, or
+      <a href="/about" class="text-blue-700 hover:underline">
+        About
+      </a>.
+    </div>
+
+    <ul class="space-y-1">
+      {posts.map((post) => (
+        <li class="text-sm md:text-xs">
+          •
+          <a href={`/blog/${post.slug}`} class="text-blue-700 hover:underline">
+            {post.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>

@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply text-black;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  .prose h1 {
+    @apply text-base font-bold mb-3;
+  }
+
+  .prose h2 {
+    @apply text-sm font-bold mb-2 mt-4;
+  }
+
+  .prose h3 {
+    @apply text-sm font-bold mb-2 mt-3;
+  }
+
+  .prose p {
+    @apply mb-3 leading-relaxed text-xs;
+  }
+
+  .prose ul {
+    @apply mb-3 pl-4 text-xs;
+  }
+
+  .prose li {
+    @apply mb-1;
+  }
+
+  .prose a {
+    @apply text-blue-700 hover:underline;
+  }
+
+  .nav-font {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  /* Home page uses Times New Roman */
+  .home-page {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .home-page .prose {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .home-page .prose p {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  /* Other pages use Verdana */
+  .other-pages {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  .other-pages .prose {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  .other-pages .prose p {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  .other-pages .prose ul {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  .other-pages .prose li {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  /* Mobile content adjustments */
+  .mobile-content {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  .mobile-content p {
+    @apply text-sm md:text-xs;
+  }
+
+  .mobile-content h1 {
+    @apply text-lg md:text-base;
+  }
+
+  .mobile-content h2 {
+    @apply text-base md:text-sm;
+  }
+
+  .mobile-content h3 {
+    @apply text-base md:text-sm;
+  }
+
+  .mobile-content ul {
+    @apply text-sm md:text-xs;
+  }
+
+  .mobile-content li {
+    @apply text-sm md:text-xs;
+  }
+}

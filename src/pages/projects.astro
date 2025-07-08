@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+
+const projects = [
+  {
+    slug: "quantum-cryptography",
+    title: "Quantum-Resistant Cryptography Analysis",
+    status: "Active",
+    description: "Research into post-quantum cryptographic algorithms and their implementation challenges.",
+    technologies: ["Python", "Cryptography", "Quantum Computing"],
+    github: "https://github.com/hafizfarhad/quantum-crypto-analysis",
+  },
+  {
+    slug: "iot-security-scanner",
+    title: "IoT Security Scanner",
+    status: "Completed",
+    description: "Automated tool for identifying common security vulnerabilities in IoT devices.",
+    technologies: ["Python", "Nmap", "Network Security"],
+    github: "https://github.com/hafizfarhad/iot-security-scanner",
+  },
+  {
+    slug: "ai-adversarial-toolkit",
+    title: "AI Adversarial Testing Toolkit",
+    status: "Active",
+    description: "Framework for testing machine learning models against adversarial attacks.",
+    technologies: ["Python", "TensorFlow", "PyTorch"],
+    github: "https://github.com/hafizfarhad/ai-adversarial-toolkit",
+  },
+];
+---
+
+<Layout title="Projects" description="Security research projects, tools, and open-source contributions by Hafiz Farhad.">
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 other-pages">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <h2 class="text-base md:text-sm font-bold text-black nav-font mb-4">PROJECTS</h2>
+
+    <ul class="space-y-1">
+      {projects.map((project) => (
+        <li class="text-sm md:text-xs">
+          •
+          <a href={`/projects/${project.slug}`} class="text-blue-700 hover:underline">
+            {project.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>

@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+
+const tags = [
+  { name: "Vulnerability Research", count: 12, slug: "vulnerability-research" },
+  { name: "Network Security", count: 11, slug: "network-security" },
+  { name: "Penetration Testing", count: 10, slug: "penetration-testing" },
+  { name: "Cryptography", count: 9, slug: "cryptography" },
+  { name: "IoT Security", count: 8, slug: "iot-security" },
+  { name: "Digital Forensics", count: 7, slug: "digital-forensics" },
+  { name: "AI Security", count: 6, slug: "ai-security" },
+  { name: "Machine Learning", count: 6, slug: "machine-learning" },
+  { name: "Mobile Security", count: 5, slug: "mobile-security" },
+  { name: "Zero-Day", count: 4, slug: "zero-day" },
+  { name: "Blockchain Security", count: 4, slug: "blockchain-security" },
+  { name: "Quantum Computing", count: 3, slug: "quantum-computing" },
+];
+---
+
+<Layout title="Tags" description="Browse security research topics and categories by tags.">
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 other-pages">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <h2 class="text-base md:text-sm font-bold text-black nav-font mb-4">TAGS</h2>
+
+    <ul class="space-y-1">
+      {tags.map((tag) => (
+        <li class="text-sm md:text-xs">
+          • <a href={`/tags/${tag.slug}`} class="text-blue-700 hover:underline">
+            {tag.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>

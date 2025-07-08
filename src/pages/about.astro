@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="About" description="Learn about Hafiz Farhad, security researcher specializing in cybersecurity, vulnerability research, and digital forensics.">
+  <Navigation slot="navigation" />
+  
+  <div class="space-y-4 other-pages">
+    <!-- Header image placeholder - responsive -->
+    <div class="mb-6">
+      <img
+        src="/placeholder.svg?height=45&width=410"
+        alt="Hafiz Farhad Header"
+        width="410"
+        height="45"
+        class="w-full h-auto max-w-[410px]"
+      />
+    </div>
+
+    <div class="prose prose-sm max-w-none">
+      <p class="text-sm md:text-xs">
+        I'm a security researcher with over a decade of experience in cybersecurity, specializing in vulnerability
+        research, digital forensics, and emerging technology security.
+      </p>
+
+      <p class="text-sm md:text-xs">
+        My research focuses on identifying and analyzing security vulnerabilities across various domains including IoT
+        devices, mobile applications, AI/ML systems, and cryptographic implementations. I believe in responsible
+        disclosure and work closely with vendors to ensure vulnerabilities are properly addressed.
+      </p>
+
+      <h2 class="nav-font text-base md:text-sm">Research Areas</h2>
+      <ul class="text-sm md:text-xs">
+        <li>IoT and embedded systems security</li>
+        <li>Mobile application security assessment</li>
+        <li>AI/ML security and adversarial attacks</li>
+        <li>Cryptographic analysis and implementation</li>
+        <li>Digital forensics and incident response</li>
+        <li>Network security and penetration testing</li>
+      </ul>
+
+      <h2 class="nav-font text-base md:text-sm">Publications & Speaking</h2>
+      <p class="text-sm md:text-xs">
+        I regularly publish research findings in academic journals and present at security conferences worldwide. My
+        work has been featured in leading cybersecurity publications and has contributed to improving the security
+        posture of numerous organizations.
+      </p>
+
+      <h2 class="nav-font text-base md:text-sm">Contact Information</h2>
+      <p class="text-sm md:text-xs">
+        <strong>Email:</strong> hafiz@example.com<br />
+        <strong>Twitter:</strong> @hafizfarhad<br />
+        <strong>LinkedIn:</strong> /in/hafizfarhad<br />
+        <strong>GitHub:</strong> /hafizfarhad
+      </p>
+
+      <h2 class="nav-font text-base md:text-sm">Certifications</h2>
+      <ul class="text-sm md:text-xs">
+        <li>CISSP - Certified Information Systems Security Professional</li>
+        <li>CEH - Certified Ethical Hacker</li>
+        <li>GCIH - GIAC Certified Incident Handler</li>
+        <li>OSCP - Offensive Security Certified Professional</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
