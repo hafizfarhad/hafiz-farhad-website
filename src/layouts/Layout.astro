@@ -46,8 +46,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="stylesheet" href="/styles/global.css">
 
   </head>
-  <body>
-    <div class="min-h-screen bg-white flex">
+  <body class="font-sans"> <!-- Apply font class here -->    <div class="min-h-screen bg-white flex">
       <slot name="navigation" />
       <main class="flex-1 md:ml-[69px]">
         <div class="max-w-[410px] md:w-[410px] w-full px-4 md:pl-4 py-6 md:py-6 pt-16 md:pt-6">

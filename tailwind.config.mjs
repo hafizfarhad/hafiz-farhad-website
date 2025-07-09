@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       'sans': ['Verdana', 'Geneva', 'sans-serif'],
+      'verdana': ['Verdana', 'Geneva', 'sans-serif'],
     },
   },
   plugins: [],
